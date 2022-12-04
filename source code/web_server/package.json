@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "html": "^1.0.0"
+  },
+  "name": "web_server",
+  "version": "1.0.0",
+  "main": "app.js",
+  "bin": {
+    "web_server": "bin/www.js"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node ./bin/www.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
