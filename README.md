@@ -11,4 +11,7 @@
 ![시스템 설계도](https://user-images.githubusercontent.com/111965118/205717038-6a2324c4-4eec-4155-8e09-7b919dcd648b.PNG)
 
 - __웹 서버 아키텍처__
+![웹서버 개발 사진](https://user-images.githubusercontent.com/111965118/205718615-db701dcf-ba58-476e-8407-4210fec4dea1.PNG)
+
+- __ 안면인식 서버 아키텍처__
 
