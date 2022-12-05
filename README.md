@@ -13,5 +13,6 @@
 - __웹 서버 아키텍처__
 ![웹서버 개발 사진](https://user-images.githubusercontent.com/111965118/205718615-db701dcf-ba58-476e-8407-4210fec4dea1.PNG)
 
-- __ 안면인식 서버 아키텍처__
+- __안면인식 서버 아키텍처__
+![영상처리서버사진](https://user-images.githubusercontent.com/111965118/205718725-8e0bcee5-9d02-4c94-a0f0-e98bc9d750f6.PNG)
 
