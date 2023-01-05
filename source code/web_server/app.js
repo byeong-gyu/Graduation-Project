@@ -21,10 +21,9 @@ app.set('port', process.env.PORT||3000);
 app.use('/', express.static(path.join(__dirname,'public-3030')));
 
 app.get('/', (req,res)=>{
-res.sendFile(path.join(__dirname,'../html/index.html'));   
+res.sendFile(path.join(__dirname,'../front-end/index.html'));   
 });
 //__dirname 절대경로 현재위치
-
 // app.get((err, req, res, next)=>{
 //     res.status(200).send('404 Error');
 // });// 에러 status 값을 변경
