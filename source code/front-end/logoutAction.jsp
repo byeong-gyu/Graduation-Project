@@ -8,8 +8,11 @@
 <title>Let's go Home</title>
 </head>
 <body>
+	<%
+		session.invalidate();
+	%>
 	<script>
-		location.href = 'login.jsp';
+		location.href = 'main.jsp'; //로그아웃
 	</script>
 </body>
 </html>

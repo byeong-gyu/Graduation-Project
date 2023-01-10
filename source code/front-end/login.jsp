@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewprt" content="width=device-width", initial-scale="1">
 <link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/custom.css">
 
 <title>Let's go Home</title>
 </head>
@@ -29,7 +30,7 @@
                      aria-expanded="false">메뉴<span class="caret"></span></a>
                      <ul class="dropdown-menu">
                      	<li class="active"><a href="join.jsp">회원가입</a></li>
-                     	<li><a href="bbs.jsp">게시판</a></li>
+                     	<li><a href="bbs.jsp">실종자 등록 현황 페이지</a></li>
 					</ul>
 				</li>
 			</ul>
