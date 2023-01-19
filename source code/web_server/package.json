@@ -4,16 +4,19 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app"
+    "start": "nodemon app"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
     "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.20"
+    "mysql2": "^3.0.1",
+    "nodemon": "^2.0.20",
+    "nunjucks": "^3.2.3",
+    "router": "^1.3.7"
   }
 }
