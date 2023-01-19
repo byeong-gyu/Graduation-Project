@@ -1,5 +1,0 @@
-<<<<<<< HEAD
-vscode test
-=======
-dddd
->>>>>>> kang_branch
