@@ -17,7 +17,9 @@
 
 
 - ### __안면인식 서버 아키텍처__
-  - 업로드 예정
+  - ![안면인식서버_아키텍처-1](https://user-images.githubusercontent.com/111965118/213619252-be1002a2-cabb-46de-aec5-58732d70be95.jpg)
+
+
 
 ------
 
