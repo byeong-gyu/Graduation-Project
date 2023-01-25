@@ -1,6 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <%@ page import="java.io.PrintWriter" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,7 +30,7 @@
 		 <ul class="nav navbar-nav">
 		<li class="active"><a href="main.jsp">메인</a></li></ul>
 			<%
-				if(userID == null) {
+				if(userID === null) {
 			%>
 <!-- 		 	비로그인 메뉴창 -->
 			<ul class="nav navbar-nav navbar-right">          
