@@ -5,22 +5,20 @@ const path = require('path');
 const session = require('express-session');
 const dotenv = require('dotenv');
 const db = require('./config/mysql');
-const nunjucks = require('nunjucks');
+const ejs = require('ejs');
 
 dotenv.config();
 //서버 오픈
 const app = express();
 app.set('port', process.env.PORT || 3000);
 //넌적스 템플릿 엔진
-app.set('view engine', 'html');
-nunjucks.configure('views', {
-  express: app,
-  watch: true,
-});
+app.set('front-end',__dirname+'../front-end');
+//엔진을 사용할 폴더명, 경로
+app.set('view engine', 'ejs');
 //요청 에러 기록
 app.use(morgan('dev'));
 //실제 주소 숨기기
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../front-end')));
 //req.body 값 불러오기
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -39,6 +37,7 @@ app.use(session({
 }));
 
 app.use('/', require('./routes/pages'));
+app.use('/auth', require('./routes/auth'));
 
 app.use((req, res, next) => {
   const error =  new Error(`${req.method} ${req.url} 라우터가 없습니다.`);
