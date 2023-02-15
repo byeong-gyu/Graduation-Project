@@ -13,7 +13,8 @@
 
 
 - ### __웹 서버 아키텍처__
-  - 업로드 예정
+  - 진행중 
+  (https://user-images.githubusercontent.com/119660070/210716567-a32cb4ef-7ee2-4920-ac23-76cff6df03af.png)
 
 
 - ### __안면인식 서버 아키텍처__
