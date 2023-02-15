@@ -13,8 +13,8 @@
 
 
 - ### __웹 서버 아키텍처__
-  - 진행중 
-  (https://user-images.githubusercontent.com/119660070/210716567-a32cb4ef-7ee2-4920-ac23-76cff6df03af.png)
+  - ![웹 서버 세부 아키텍처](https://user-images.githubusercontent.com/119674687/218985955-78a05eab-4367-4e5e-addf-e1cf37884f91.png)
+
 
 
 - ### __안면인식 서버 아키텍처__
