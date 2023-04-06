@@ -18,7 +18,7 @@
 
 
 - ### __안면인식 서버 아키텍처__
-  - ![안면인식서버_아키텍처-1](https://user-images.githubusercontent.com/111965118/213619252-be1002a2-cabb-46de-aec5-58732d70be95.jpg)
+  ![알고리즘 수정본](https://user-images.githubusercontent.com/111965118/230404586-16869fe0-c479-41e8-a220-3107e23f5424.jpg)
 
 
 
