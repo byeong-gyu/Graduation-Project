@@ -1,10 +1,11 @@
 import cv2
 import numpy as np
 import socket
+import struct
 
 # 서버 정보
-server_ip = '서버 IP 주소'
-server_port = 서버 포트 번호
+server_ip = '127.0.0.1'
+server_port = 5000
 
 # 소켓 생성
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -34,7 +35,8 @@ while True:
         # 이미지를 일정 크기로 조절하여 송신할 수 있도록 변환
         resized_face_img = cv2.resize(face_img, (150, 150), interpolation=cv2.INTER_AREA)
         # 이미지 데이터를 바이트 스트림으로 변환하여 송신
-        client_socket.send(resized_face_img.tobytes())
+        data = struct.pack('>I', resized_face_img.shape[0]) + resized_face_img.tobytes()
+        client_socket.sendall(data)
 
     # q 키를 누르면 종료
     if cv2.waitKey(1) & 0xFF == ord('q'):
