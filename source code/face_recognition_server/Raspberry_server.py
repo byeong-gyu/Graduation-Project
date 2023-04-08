@@ -37,10 +37,10 @@ while True:
     # 이미지 데이터 배열 변환
     frame_data = data[:msg_size]
     frame = np.frombuffer(frame_data, dtype=np.uint8)
-    frame = frame.reshape(-1, 150, 150, 3)
+    frame = frame.reshape(150, 150, 3)
 
     # 이미지 출력
-    cv2.imshow('Face Detection', frame[0])
+    cv2.imshow('Face Detection', frame)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
