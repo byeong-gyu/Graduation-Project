@@ -37,7 +37,7 @@ while True:
     # 이미지 데이터 배열 변환
     frame_data = data[:msg_size]
     frame = np.frombuffer(frame_data, dtype=np.uint8)
-    frame = frame.reshape(150, 150, 3)
+    frame = cv2.imdecode(frame, cv2.IMREAD_COLOR)
 
     # 이미지 출력
     cv2.imshow('Face Detection', frame)
