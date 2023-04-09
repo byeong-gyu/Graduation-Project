@@ -1,4 +1,3 @@
-# 서버 소스코드
 import cv2
 import numpy as np
 import socket
@@ -25,7 +24,12 @@ print('Client connected:', addr)
 # 이미지 수신 함수
 def receive_image():
     # 이미지 데이터 크기 수신
-    size_data = client_socket.recv(4)
+    size_data = b''
+    while len(size_data) < 4:
+        data = client_socket.recv(4 - len(size_data))
+        if not data:
+            return None
+        size_data += data
     size = struct.unpack('>L', size_data)[0]
 
     # 이미지 데이터 수신
