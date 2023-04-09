@@ -61,7 +61,7 @@ while True:
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
-# 소켓 리소스 해제
+# 소켓 및 카메라 리소스 해제
 client_socket.close()
 server_socket.close()
 cv2.destroyAllWindows()

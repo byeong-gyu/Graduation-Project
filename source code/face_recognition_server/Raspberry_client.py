@@ -64,6 +64,7 @@ def send_image(frame):
     except BrokenPipeError:
         print('Connection broken')
         client_socket.close()
+        return
 
 while True:
     # 비디오 프레임 읽기
