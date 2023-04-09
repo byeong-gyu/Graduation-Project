@@ -13,6 +13,9 @@ client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 # 서버 연결
 client_socket.connect((server_ip, server_port))
 
+# 타임아웃 값 설정
+client_socket.settimeout(10)
+
 # 비디오 캡처 객체 생성
 cap = cv2.VideoCapture(0)
 
@@ -56,7 +59,11 @@ def send_image(frame):
     client_socket.sendall(struct.pack('>L', size))
 
     # 이미지 데이터 전송
-    client_socket.sendall(frame_data)
+    try:
+        client_socket.sendall(frame_data)
+    except BrokenPipeError:
+        print('Connection broken')
+        client_socket.close()
 
 while True:
     # 비디오 프레임 읽기
