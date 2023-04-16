@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/custom.css">
+
+<title>Let's go Home</title>
+</head>
+<body>
+<div th:if="${session.userID != null}">
+	<p> <span th:text="${session.userID}"></span> 님 저희가 도와드리겠습니다.</p>
+</div>
+	<nav class="navbar navbar-default">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed"
+			data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+			aria-expanded="false">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="write">실종자 찾기 사이트</a>
+		</div>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		 <ul class="nav navbar-nav">
+		<li class="active"><a href="/">메인</a></li></ul>
+			<div th:if="${userID == null}">
+			</div>
+
+<!-- 		 	비로그인 메뉴창 -->
+			<ul class="nav navbar-nav navbar-right">
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle"
+                     data-toggle="dropdown" role="button" aria-haspopup="true"
+                     aria-expanded="false">메뉴<span class="caret"></span></a>
+                     <ul class="dropdown-menu">
+                     	<li><a href="join">회원가입</a></li>
+					</ul>
+				</li>
+			</ul>
+			<div th:if="${userID != null}">
+			</div>
+<!-- 			로그인 시 메뉴창 -->
+			<ul class="nav navbar-nav navbar-right">
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle"
+                     data-toggle="dropdown" role="button" aria-haspopup="true"
+                     aria-expanded="false">회원관리<span class="caret"></span></a>
+                     <ul class="dropdown-menu">
+                     	<li><a href="logoutAction">로그아웃</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="jumbotron">
+			<div class="container">
+				<h1>Let's go Home</h1>
+				<p>실종자 찾기 사이트</p>
+				<div id="myCarousel" class="carousel slide" data-ride="carousel">
+					<ol class="carousel-indicators">
+						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+						<li data-target="#myCarousel" data-slide-to="1"></li>
+					</ol>
+					<div class="carousel-inner">
+						<div class="item active">
+							<img src="image/main11.jpg">
+						</div>
+						<div class="item">
+							<img src="image/main22.jpg">
+						</div>
+					</div>
+					<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+						<span class="glyphicon glyphicon-chevron-left"></span>
+					</a>
+					<a class="right carousel-control" href="#myCarousel" data-slide="next">
+						<span class="glyphicon glyphicon-chevron-right"></span>
+					</a>
+				<p><a class="btn btn-primary btn-pull form-control" href="login" role="button">로그인</a></p>
+			</div>
+		</div>
+	</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+</body>
+</html>

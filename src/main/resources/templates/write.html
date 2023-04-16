@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<head>
+  <title>Let's go Home</title>
+  <link rel="stylesheet" href="css/css.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+<nav class="navbar navbar-default">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed"
+            data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+            aria-expanded="false">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="write">실종자 찾기 사이트</a>
+  </div>
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="write">메인</a></li></ul>
+
+    <!-- 		 	비로그인 메뉴창 -->
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle"
+           data-toggle="dropdown" role="button" aria-haspopup="true"
+           aria-expanded="false">메뉴<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="join">회원가입</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="board_wrap">
+  <div class="board_title">
+    <strong>실종자 등록</strong>
+    <p>실종자 정보를 입력하세요</p>
+  </div>
+  <div class="board_write_wrap">
+    <div class="board_write">
+      <div class="title">
+        <form method="POST" action="/write" enctype="multipart/form-data">
+
+        <dl>
+          <dl>
+            <dt>이름</dt>
+            <dd><input type="#" name="missingName" placeholder="이름 입력하세여"></dd>
+          </dl>
+          <dl>
+            <dt>나이</dt>
+            <dd><input type="#" name="missingAge" placeholder="나이 입력하세여"></dd>
+          </dl>
+          <dl>
+            <dt>성별</dt>
+            <dd><input type="radio" name="missingGender" value="man" checked/>남
+              <input type="radio" name="missingGender" value="woman">여</dd>
+          </dl>
+          <dt>발생장소</dt>
+          <dd><input type="text" name="missingPlace"placeholder="발생장소 입력하세여"></dd>
+          <dt>실종일시</dt>
+          <dd><input type="date"
+                     id="date"
+                     name="missingDate"
+                     max="2030-12-31"
+                     min="2020-01-01"
+                     value="2023-03-01"></label></dd>
+        </dl>
+        <div class="image-upload" id="image-upload">
+          <dl><dt>실종자 이미지</dt></dl>
+
+            <input type="file" id="chooseFile" name="boardFile" accept="image/*" onchange="loadFile(this)">
+        </div>
+        <div class="bt_wrap">
+          <a href="bbs" class="on">등록</a>
+          <a href="/">취소</a>
+        </div>
+          <input type="submit">
+        </form>
+
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+</body>
+</html>

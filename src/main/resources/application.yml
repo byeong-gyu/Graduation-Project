@@ -1,0 +1,25 @@
+server:
+  servlet:
+    session:
+      tracking-modes:
+        - cookie
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/example?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: hh
+    password: 12341234
+  thymeleaf:
+    cache: false
+  servlet:
+    multipart:
+      enabled: true
+      location: C:/temp/
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    open-in-view: false
+    show-sql: true
+    hibernate:
+      ddl-auto: create
