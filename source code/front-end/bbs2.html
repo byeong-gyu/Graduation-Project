@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewprt" content="width=device-width", initial-scale="1">
+    <title>Let's go Home</title>
+    <link rel="stylesheet" href="css/css.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+    <nav class="navbar navbar-default">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed"
+			data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+			aria-expanded="false">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="main.html">실종자 찾기 사이트</a>
+		</div>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		 <ul class="nav navbar-nav">
+		<li><a href="write.html">실종자 등록</a></li>
+		<li class="active"><a href="bbs.html">실종자 등록 현황 페이지</a></li></ul>
+
+			<ul class="nav navbar-nav navbar-right">
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle"
+                     data-toggle="dropdown" role="button" aria-haspopup="true"
+                     aria-expanded="false">회원관리<span class="caret"></span></a>
+                     <ul class="dropdown-menu">
+                     	<li><a href="logoutAction.html">로그아웃</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</nav>
+    <div class="container">
+        <h1>실종자 발견</h1>
+        <h4>실종자 사진, 정보, 위치를 안내해드립니다.</h4>
+    </div>
+        <hr class='hr-solid'/>
+              <h3><div class="사진" style="float: left">실종 전&nbsp&nbsp&nbsp&nbsp</div></h3>
+        <!-- 실종전 사진코드 -->
+        <!-- 실종후 사진코드 -->
+       <h3><div class="발견사진" style="float: right">실종 후</div></h3><br>
+
+       <hr class='hr-solid'/>
+       <div class="container">
+        <h3><div class="name" >이름:</div></h3>
+        <h3><div class="age">나이:</div></h3>
+        <h3><div class="date">실종날짜:</div></h3>
+        <h3><div class="location">실종장소:</div></h3>
+        <h3> <div class="contact">보호자 연락처:</div></h3>
+        </div>
+        <hr class='hr-solid'/>
+        <div class="id">위치</div>
+   <iframe src="지도소스" allowfullscreen=""flase loading="lazy">
+    <!-- 추가로 지도 크기 조정 예정 -->
+</iframe>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+</body>
+</html>
