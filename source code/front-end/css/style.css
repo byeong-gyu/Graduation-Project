@@ -282,3 +282,10 @@ a {
     border: 0;
     resize: vertical;
 }
+.hr-solid {
+    border : 0px;
+    border-top: 5px solid #000000;
+  }
+  .font_center{
+	text-align: center;
+  }
