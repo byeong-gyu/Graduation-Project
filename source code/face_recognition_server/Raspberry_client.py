@@ -5,7 +5,8 @@ import struct
 
 # 서버 정보
 server_ip = '127.0.0.1'
-server_port = 5000
+server_port = 12345
+
 
 # 소켓 생성
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -55,12 +56,18 @@ def send_image(frame):
     frame_data = frame.tobytes()
     size = len(frame_data)
 
+    # 서버에 실종자 찾기 요청
+    request_type = "실종자 찾기"
+    client_socket.sendall((request_type + "\n").encode("utf-8"))
+
     # 이미지 데이터 크기 전송
     client_socket.sendall(struct.pack('>L', size))
 
     # 이미지 데이터 전송
     try:
         client_socket.sendall(frame_data)
+        response = client_socket.recv(1024).decode("utf-8")
+        print(response)
     except BrokenPipeError:
         print('Connection broken')
         client_socket.close()
