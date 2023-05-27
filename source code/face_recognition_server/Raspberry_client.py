@@ -2,9 +2,12 @@ import cv2
 import numpy as np
 import socket
 import struct
+import os
+#from PIL import Image
+#import io
 
 # 서버 정보
-server_ip = '127.0.0.1'
+server_ip = '192.168.123.111'
 server_port = 12345
 
 
@@ -48,30 +51,36 @@ def preprocess(frame):
     # 이미지 배열 형태 변환
     face_image = face_image.reshape((1, 150, 150, 3))
 
-    return face_image
+    filename="image.png"
+    current_dir = os.getcwd()
+    save_path = os.path.join(current_dir, filename)
+ 
+    #face_image = face_image.astype(np.float32)
+
+    #이미지 데이터 알쥐비 형식으로 변환
+    #bgr_image = cv2.cvtColor(face_image, cv2.COLOR_RGB2BGR)
+
+    cv2.imwrite(save_path, frame)
+    return "ok"
 
 # 이미지 전송 함수
-def send_image(frame):
-    # 이미지 데이터 크기 구하기
-    frame_data = frame.tobytes()
-    size = len(frame_data)
-
+def send_image(image_data):
     # 서버에 실종자 찾기 요청
     request_type = "실종자 찾기"
     client_socket.sendall((request_type + "\n").encode("utf-8"))
 
+ 
     # 이미지 데이터 크기 전송
-    client_socket.sendall(struct.pack('>L', size))
+    image_size_bytes = struct.pack("!I",len(image_data))
+    client_socket.sendall(image_size_bytes)
+
 
     # 이미지 데이터 전송
-    try:
-        client_socket.sendall(frame_data)
-        response = client_socket.recv(1024).decode("utf-8")
-        print(response)
-    except BrokenPipeError:
-        print('Connection broken')
-        client_socket.close()
-        return
+    client_socket.sendall(image_data)
+    
+    #잠시 대기
+    message = client_socket.recv(1024).decode("utf-8")
+    print(message)
 
 while True:
     # 비디오 프레임 읽기
@@ -82,7 +91,11 @@ while True:
 
     # 얼굴이 검출된 경우 이미지 전송
     if face_image is not None:
-        send_image(face_image)
+        with open("image.png", "rb") as f:
+            image_data = f.read()
+            #image = Image.open(io.BytesIO(image_data))
+            #image.show()
+        send_image(image_data)
 
     # q 키를 누르면 종료
     if cv2.waitKey(1) & 0xFF == ord('q'):
