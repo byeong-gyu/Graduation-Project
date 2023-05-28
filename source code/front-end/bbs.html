@@ -22,7 +22,7 @@
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		 <ul class="nav navbar-nav">
 		<li><a href="write.html">실종자 등록</a></li>
-		<li class="active"><a href="bbs.html">실종자 등록 현황 페이지</a></li></ul>
+		<li class="active"><a href="bbs.html">실종자 등록 현황</a></li></ul>
 
 			<ul class="nav navbar-nav navbar-right">
 				<li class="dropdown">
@@ -76,13 +76,14 @@
 	<option value="1">남자</option>
 	<option value="2">여자</option>
 </select>
+<dt><h4>이름</h4></dt>
+<dd><input type="#" placeholder="이름를 입력하세요"></dd>
 </div>
 	<div class="container">
 		<div class="row">
 			<table class="table table-striped" styl="text-align : center; border: 1px solid #dddddd">
 				<thead>
 					<tr>
-						<th style="background-color: #eeeeee; text-align: left;">
 						<th style="background-color: #eeeeee; text-align: left;">체크</th>
 						<th style="background-color: #eeeeee; text-align: left;">번호</th>
 						<th style="background-color: #eeeeee; text-align: left;">이름(성별)</th>
@@ -92,11 +93,17 @@
 					</tr>
 			</thead>
 			<tbody>
-				
+				<td><input type="checkbox"></td>
+				<td>1</td>
+				<td>홍길동</td>
+				<td>23</td>
+				<td>2022년10월23일</td>
+				<td>경상남도 창원시</td>
 			</tbody>
 			
 	</table>
-
+	<div style=" text-align: left;">
+		<button style=" display: inline-block;">삭제</button>
 		</div>
 		</div>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

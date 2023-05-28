@@ -22,7 +22,7 @@
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		 <ul class="nav navbar-nav">
 		<li><a href="write.html">실종자 등록</a></li>
-		<li class="active"><a href="bbs.html">실종자 등록 현황 페이지</a></li></ul>
+		<li class="active"><a href="bbs.html">실종자 등록 현황</a></li></ul>
 
 			<ul class="nav navbar-nav navbar-right">
 				<li class="dropdown">
@@ -41,24 +41,26 @@
         <h4>실종자 사진, 정보, 위치를 안내해드립니다.</h4>
     </div>
         <hr class='hr-solid'/>
-              <h3><div class="사진" style="float: left">실종 전&nbsp&nbsp&nbsp&nbsp</div></h3>
-        <!-- 실종 전 사진코드 -->
-        <!-- 실종 후 사진코드 -->
-       <h3><div class="발견사진" style="float: right">실종 후</div></h3><br>
+              <center><h3><div class="사진" float:left;>실종 전 | 실종 후</div></h3></center>
+
+        <!-- 실종 전 사진코드 --><center><img src="image/1.png" style="height:200px; width:500px;">
+        <!-- 실종 후 사진코드 --><img src="image/2.png" style="height:200px; width:500px;"></center>
+
 
        <hr class='hr-solid'/>
        <div class="container">
-        <h3><div class="name" >이름:</div></h3>
-        <h3><div class="age">나이:</div></h3>
-        <h3><div class="date">실종날짜:</div></h3>
-        <h3><div class="location">실종장소:</div></h3>
-        <h3> <div class="contact">보호자 연락처:</div></h3>
+        <h3><div class="name" >이름:홍길동</div></h3>
+        <h3><div class="age">나이:30</div></h3>
+        <h3><div class="date">실종날짜:2022년10월23일</div></h3>
+        <h3><div class="location">실종장소:경상남도 창원시 마산합포구</div></h3>
+        <h3> <div class="contact">보호자 연락처:010-xxxx-xxxx</div></h3>
         </div>
         <hr class='hr-solid'/>
-        <div class="id">위치</div>
-   <iframe src="지도소스" allowfullscreen=""flase loading="lazy">
+        <div class="container">
+        <h3><div id="map">위치</div></h3></div><center>
+ <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.048248710187!2d128.55081007624284!3d35.18034997275314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x356f2e8e7fbcf97b%3A0x7f4f8fa588568525!2z6rK964Ko64yA7ZWZ6rWQ!5e0!3m2!1sko!2skr!4v1684990459911!5m2!1sko!2skr" width="500" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     <!-- 지도 크기 조정 예정 -->
-</iframe>
+</center>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script src="js/bootstrap.js"></script>
 </body>
