@@ -22,7 +22,7 @@
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		 <ul class="nav navbar-nav">
 		<li class="active"><a href="write.html">실종자 등록 </a></li>
-        <li><a href="bbs.html">실종자 등록 현황 페이지</a></li></ul>
+        <li><a href="bbs.html">실종자 등록 현황</a></li></ul>
 			<ul class="nav navbar-nav navbar-right">          
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle"
@@ -46,31 +46,52 @@
                     <dl>
                         <dl>
                             <dt>이름</dt>
-                            <dd><input type="#" placeholder="이름 입력하세여"></dd>
+                            <dd><input type="#" placeholder="이름를 입력하세요"></dd>
                         </dl>
                         <dl>
                             <dt>나이</dt>
-                            <dd><input type="#" placeholder="나이 입력하세여"></dd>
+                            <dd><input type="#" placeholder="나이를 입력하세요"></dd>
                         </dl>
                         <dl>
                             <dt>성별</dt>
                             <dd><input type="radio" name="gender" value="man" checked/>남
                                 <input type="radio" name="gender" value="woman">여</dd>
                         </dl>
+                        <dl>
+                            <dt>보호자 연락처</dt>
+                            <dd><input type="#" placeholder="연락처를 입력하세요"></dd>
+                        </dl>
                         <dt>발생장소</dt>
-                        <dd><input type="text" placeholder="발생장소 입력하세여"></dd>
+                        <dd><input type="text" placeholder="발생장소를 입력하세요"></dd><p></p>
                         <dt>실종일시</dt>
                         <dd><input type="date"
                             id="date"
                             max="2030-12-31"
                             min="2020-01-01"
                             value="2023-03-01"></label></dd>
+                        
                     </dl>
-                        <div class="image-upload" id="image-upload">
-                        <dl><dt>실종자 이미지</dt></dl>
-                            <form method="post" enctype="multipart/form-data">
-                               
-                                <input type="file" id="chooseFile" name="chooseFile" accept="image/*" onchange="loadFile(this)">
+                    <div class="image-container">
+                        <input style="display: block;" type="file" id="input-image">
+                        <img style="width: 500px;" id="preview-image" src="https://dummyimage.com/500x500/ffffff/000000.png&text=preview+image">
+                                           </div>
+
+    <script>
+function readImage(input) {
+    if(input.files && input.files[0]) {
+        const reader = new FileReader()
+        reader.onload = e => {
+            const previewImage = document.getElementById("preview-image")
+            previewImage.src = e.target.result
+        }
+        reader.readAsDataURL(input.files[0])
+    }
+}
+const inputImage = document.getElementById("input-image")
+inputImage.addEventListener("change", e => {
+    readImage(e.target)
+})
+    </script>
                             </form>
                         </div>
             <div class="bt_wrap">
